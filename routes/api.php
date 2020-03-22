@@ -14,6 +14,29 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group(['prefix' => '/job'], function () {
+    Route::get('', 'JobsController@index');
+    Route::get('/paginate', 'JobsController@paginate');
+    Route::post('', 'JobsController@create');
+    Route::put('/{id}', 'JobsController@edit');
+    Route::get('/{id}', 'JobsController@show');
+    Route::delete('/{id}', 'JobsController@delete');
+});
+
+Route::group(['prefix' => '/client'], function () {
+    Route::get('', 'ClientsController@index');
+    Route::get('/paginate', 'ClientsController@paginate');
+    Route::post('', 'ClientsController@create');
+    Route::put('/{id}', 'ClientsController@edit');
+    Route::get('/{id}', 'ClientsController@show');
+    Route::delete('/{id}', 'ClientsController@delete');
+});
+
+Route::group(['prefix' => '/provider'], function () {
+    Route::get('', 'ClientsController@index');
+    Route::get('/paginate', 'ClientsController@paginate');
+    Route::post('', 'ClientsController@create');
+    Route::put('/{id}', 'ClientsController@edit');
+    Route::get('/{id}', 'ClientsController@show');
+    Route::delete('/{id}', 'ClientsController@delete');
 });
