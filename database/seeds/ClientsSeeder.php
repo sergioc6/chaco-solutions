@@ -12,14 +12,18 @@ class ClientsSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('clients')->insert([
-            'first_name' => Str::random(10),
-            'last_name' => Str::random(10),
-            'email' => Str::random(10).'@gmail.com',
-            'phone' => Str::random(10),
-            'mobile_phone' => Str::random(10),
-            'address' => Str::random(10),
-            'created_at' => \Carbon\Carbon::now()
-        ]);
+        $faker = \Faker\Factory::create();
+        for ($i = 0; $i < 10; $i++) {
+            DB::table('clients')->insert([
+                'first_name' => $faker->firstName,
+                'last_name' => $faker->lastName,
+                'email' => $faker->email,
+                'phone' => $faker->phoneNumber,
+                'mobile_phone' => $faker->phoneNumber,
+                'address' => $faker->address,
+                'created_at' => \Carbon\Carbon::now(),
+                'updated_at' => \Carbon\Carbon::now()
+            ]);
+        }
     }
 }
