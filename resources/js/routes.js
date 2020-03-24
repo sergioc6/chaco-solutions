@@ -2,9 +2,9 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 
 import Home from "./components/Home";
-import Jobs from "./components/Jobs";
-import Providers from "./components/Providers";
-import Clients from "./components/Clients";
+import Jobs from "./components/Jobs/Jobs";
+import Providers from "./components/Providers/Providers";
+import Clients from "./components/Clients/Clients";
 
 Vue.use(VueRouter);
 

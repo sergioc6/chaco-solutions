@@ -13,33 +13,35 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::get('', function () {
-    return 'API - Chaco Solutions';
-});
+Route::group(['middleware' => 'cors'], function () {
+    Route::get('', function () {
+        return 'API - Chaco Solutions';
+    });
 
-Route::group(['prefix' => '/job'], function () {
-    Route::get('', 'JobsController@index');
-    Route::get('/paginate', 'JobsController@paginate');
-    Route::post('', 'JobsController@create');
-    Route::put('/{id}', 'JobsController@edit');
-    Route::get('/{id}', 'JobsController@show');
-    Route::delete('/{id}', 'JobsController@delete');
-});
+    Route::group(['prefix' => '/job'], function () {
+        Route::get('', 'JobsController@index');
+        Route::get('/paginate', 'JobsController@paginate');
+        Route::post('', 'JobsController@create');
+        Route::put('/{id}', 'JobsController@edit');
+        Route::get('/{id}', 'JobsController@show');
+        Route::delete('/{id}', 'JobsController@delete');
+    });
 
-Route::group(['prefix' => '/client'], function () {
-    Route::get('', 'ClientsController@index');
-    Route::get('/paginate', 'ClientsController@paginate');
-    Route::post('', 'ClientsController@create');
-    Route::put('/{id}', 'ClientsController@edit');
-    Route::get('/{id}', 'ClientsController@show');
-    Route::delete('/{id}', 'ClientsController@delete');
-});
+    Route::group(['prefix' => '/client'], function () {
+        Route::get('', 'ClientsController@index');
+        Route::get('/paginate', 'ClientsController@paginate');
+        Route::post('', 'ClientsController@create');
+        Route::put('/{id}', 'ClientsController@edit');
+        Route::get('/{id}', 'ClientsController@show');
+        Route::delete('/{id}', 'ClientsController@delete');
+    });
 
-Route::group(['prefix' => '/provider'], function () {
-    Route::get('', 'ClientsController@index');
-    Route::get('/paginate', 'ClientsController@paginate');
-    Route::post('', 'ClientsController@create');
-    Route::put('/{id}', 'ClientsController@edit');
-    Route::get('/{id}', 'ClientsController@show');
-    Route::delete('/{id}', 'ClientsController@delete');
+    Route::group(['prefix' => '/provider'], function () {
+        Route::get('', 'ProvidersController@index');
+        Route::get('/paginate', 'ProvidersController@paginate');
+        Route::post('', 'ProvidersController@create');
+        Route::put('/{id}', 'ProvidersController@edit');
+        Route::get('/{id}', 'ProvidersController@show');
+        Route::delete('/{id}', 'ProvidersController@delete');
+    });
 });

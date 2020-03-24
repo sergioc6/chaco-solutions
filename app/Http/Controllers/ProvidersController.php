@@ -7,7 +7,7 @@ namespace App\Http\Controllers;
 use App\Models\Provider;
 use Illuminate\Http\Request;
 
-class ProvidersController extends Controller
+class ProvidersController extends ApiController
 {
     public function index()
     {
