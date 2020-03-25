@@ -31,17 +31,12 @@
         data() {
             return {
                 headers: [
-                    {
-                        text: 'ID',
-                        align: 'start',
-                        sortable: false,
-                        value: 'id',
-                    },
+                    {text: 'ID', value: 'id'},
                     {text: 'Nombre', value: 'first_name'},
                     {text: 'Apellido', value: 'last_name'},
                     {text: 'Email', value: 'email'},
                     {text: 'Dirección', value: 'address'},
-                    {text: 'Acciones', value: 'actions'},
+                    {text: 'Acciones', sortable: false, value: 'actions'},
                 ],
                 clients: [],
             }

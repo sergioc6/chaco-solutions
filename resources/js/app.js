@@ -11,6 +11,7 @@ import ProvidersHeader from "./components/Providers/ProvidersHeader";
 import ProvidersList from "./components/Providers/ProvidersList";
 import ProvidersActions from "./components/Providers/ProvidersActions";
 import ClientsActions from "./components/Clients/ClientsActions";
+import ClientsForm from "./components/Clients/ClientsForm";
 
 Vue.use(Vuetify);
 
@@ -21,6 +22,7 @@ Vue.use(Vuetify);
  */
 
 Vue.component('clients-header', ClientsHeader);
+Vue.component('clients-form', ClientsForm);
 Vue.component('clients-actions', ClientsActions);
 Vue.component('clients-list', ClientsList);
 Vue.component('providers-header', ProvidersHeader);

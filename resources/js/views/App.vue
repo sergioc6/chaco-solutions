@@ -43,6 +43,7 @@
                         <v-list-item
                             v-for="(child, i) in item.children"
                             :key="i"
+                            :to="item.link"
                             link
                         >
                             <v-list-item-action v-if="child.icon">
@@ -58,6 +59,7 @@
                     <v-list-item
                         v-else
                         :key="item.text"
+                        :to="item.link"
                         link
                     >
                         <v-list-item-action>
@@ -108,11 +110,11 @@
             dialog: false,
             drawer: null,
             items: [
-                { icon: 'mdi-history', text: 'Trabajos' },
-                { icon: 'mdi-content-copy', text: 'Insumos' },
-                { icon: 'mdi-contacts', text: 'Proveedores' },
-                { icon: 'mdi-content-copy', text: 'Clientes' },
-                { icon: 'mdi-settings', text: 'Configuraciones' }
+                { icon: 'mdi-history', text: 'Trabajos', link: '/jobs' },
+                { icon: 'mdi-content-copy', text: 'Insumos', link: '/supplies' },
+                { icon: 'mdi-contacts', text: 'Proveedores', link: '/providers' },
+                { icon: 'mdi-content-copy', text: 'Clientes', link: '/clients' },
+                { icon: 'mdi-settings', text: 'Configuraciones', link: '/config' }
             ]
         }),
     }
